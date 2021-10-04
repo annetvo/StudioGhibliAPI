@@ -1,0 +1,35 @@
+{% extends 'components/layout.html' %}
+
+{% block title %}{{ username }} Profile{% endblock title %}
+
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-10">
+        <h1>Update User Info:</h1>
+        <p> Only fill in fields as needed. Otherwise, keep blank. </p>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+              <fieldset id = "newusername-field">
+                  {{ form.newusername(class="form-control", placeholder="new username")}}
+              </fieldset>
+              <br>
+              <fieldset id = "currentpassword-field">
+                {{ form.currentpassword(class="form-control", placeholder="current password")}}
+                </fieldset>
+                <br>
+              <fieldset id = "newpassword-field">
+                  {{ form.newpassword(class="form-control", placeholder="new password")}}
+              </fieldset>
+              <br>
+              <fieldset id = "confirm_newpassword-field">
+                  {{ form.confirm_newpassword(class="form-control", placeholder="confirm new password")}}
+              </fieldset>
+              <br>
+              {{ form.submit(class= "btn btn-info btn-block") }}
+          </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,48 @@
+* {
+   font-family: 'Mansalva', cursive;
+}
+
+h1{
+   color:white;
+}
+
+.ghibli {
+   align-content: center;
+   margin: 20px;
+   padding: 20px;
+}
+
+p {
+   font-size: medium;
+}
+
+.bio {
+   border: 10px;
+   border-radius: 5px;
+   border-color: black;
+}
+
+#bg {
+    /* The image used */
+  background-image: url(../images/oop.gif);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ }
+
+ body, html {
+   height: 100%;
+ }
+
+ #navbar {
+    border-radius: 10px;
+ }
+
+ #navbarDropdownMenuLink {
+    background-color: transparent;
+ }

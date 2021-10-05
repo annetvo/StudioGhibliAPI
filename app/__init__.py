@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 from config import Config
 from flask_cors import CORS
 
@@ -11,6 +12,11 @@ from flask_migrate import Migrate
 
 
 app = Flask(__name__)
+
+
+db = SQLAlchemy(app)
+migrate = Migrate(app,db)
+
 cors=CORS(app, origins=['*'])
 
 app.register_blueprint(movies)
@@ -20,8 +26,6 @@ app.register_blueprint(api)
 app.config.from_object(Config)
 
 db.init_app(app)
-
-migrate = Migrate(app, db)
 
 login.init_app(app)
 login.login_view = 'auth.signin'
